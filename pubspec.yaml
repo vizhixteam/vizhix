@@ -1,5 +1,5 @@
-name: vizhix
-description: "A new Flutter project."
+name: Vizhix
+description: "A mobile application which is used to read novels, comics & manga."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -56,7 +56,126 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  fonts:
+    - family: Sora
+      fonts:
+        - asset: assets\fonts\sora\Sora-Thin.ttf
+          weight: 100
+        - asset: assets\fonts\sora\Sora-ExtraLight.ttf
+          weight: 200
+        - asset: assets\fonts\sora\Sora-Light.ttf
+          weight: 300
+        - asset: assets\fonts\sora\Sora-Regular.ttf
+          weight: 400
+        - asset: assets\fonts\sora\Sora-Medium.ttf
+          weight: 500
+        - asset: assets\fonts\sora\Sora-SemiBold.ttf
+          weight: 600
+        - asset: assets\fonts\sora\Sora-Bold.ttf
+          weight: 700
+        - asset: assets\fonts\sora\Sora-ExtraBold.ttf
+          weight: 800
 
+    - family: Manrope
+      fonts:
+        - asset: assets\fonts\manrope\Manrope-Regular.ttf
+          weight: 400
+        - asset: assets\fonts\manrope\Manrope-Medium.ttf
+          weight: 500
+        - asset: assets\fonts\manrope\Manrope-SemiBold.ttf
+          weight: 600
+        - asset: assets\fonts\manrope\Manrope-Bold.ttf
+          weight: 700
+        - asset: assets\fonts\manrope\Manrope-ExtraBold.ttf
+          weight: 800
+
+    - family: Inter
+      fonts:
+        - asset: assets\fonts\inter\Inter_18pt-ExtraLight.ttf
+          weight: 200
+        - asset: assets\fonts\inter\Inter_24pt-Light.ttf
+          weight: 300
+        - asset: assets\fonts\inter\Inter_18pt-Regular.ttf
+          weight: 400
+        - asset: assets\fonts\inter\Inter_18pt-Medium.ttf
+          weight: 500
+        - asset: assets\fonts\inter\Inter_18pt-SemiBold.ttf
+          weight: 600
+        - asset: assets\fonts\inter\Inter_24pt-Bold.ttf
+          weight: 700
+
+    - family: Lora
+      fonts:
+        - asset: assets\fonts\lora\Lora-Regular.ttf
+          weight: 400
+        - asset: assets\fonts\lora\Lora-Medium.ttf
+          weight: 500
+        - asset: assets\fonts\lora\Lora-SemiBold.ttf
+          weight: 600
+        - asset: assets\fonts\lora\Lora-Bold.ttf
+          weight: 700
+
+    - family: Literata
+      fonts:
+        - asset: assets\fonts\literata\Literata_18pt-Regular.ttf
+          weight: 400
+        - asset: assets\fonts\literata\Literata_18pt-Medium.ttf
+          weight: 500
+        - asset: assets\fonts\literata\Literata_18pt-SemiBold.ttf
+          weight: 600
+        - asset: assets\fonts\literata\Literata_36pt-Bold.ttf
+          weight: 700
+
+    - family: Source Serif 4
+      fonts:
+        - asset: assets\fonts\source serif 4\SourceSerif4_18pt-Regular.ttf
+          weight: 400
+        - asset: assets\fonts\source serif 4\SourceSerif4_18pt-Medium.ttf
+          weight: 500
+        - asset: assets\fonts\source serif 4\SourceSerif4_18pt-SemiBold.ttf
+          weight: 600
+        - asset: assets\fonts\source serif 4\SourceSerif4_36pt-Bold.ttf
+          weight: 700
+
+    - family: Merriweather
+      fonts:
+        - asset: assets\fonts\merriweather\Merriweather_24pt-Regular.ttf
+          weight: 400
+        - asset: assets\fonts\merriweather\Merriweather_24pt-Bold.ttf
+          weight: 700
+
+    - family: Crimson Pro
+      fonts:
+        - asset: assets\fonts\crimson Pro\CrimsonPro-Regular.ttf
+          weight: 400
+        - asset: assets\fonts\crimson Pro\CrimsonPro-Medium.ttf
+          weight: 500
+        - asset: assets\fonts\crimson Pro\CrimsonPro-SemiBold.ttf
+          weight: 600
+        - asset: assets\fonts\crimson Pro\CrimsonPro-Bold.ttf
+          weight: 700
+
+    - family: Noto Sans Tamil
+      fonts:
+        - asset: assets\fonts\noto sans tamil\NotoSansTamil-Regular.ttf
+          weight: 400
+        - asset: assets\fonts\noto sans tamil\NotoSansTamil-Medium.ttf
+          weight: 500
+        - asset: assets\fonts\noto sans tamil\NotoSansTamil-SemiBold.ttf
+          weight: 600
+        - asset: assets\fonts\noto sans tamil\NotoSansTamil-Bold.ttf
+          weight: 700
+
+    - family: Noto Serif Tamil
+      fonts:
+        - asset: assets\fonts\noto serif tamil\NotoSerifTamil-Regular.ttf
+          weight: 400
+        - asset: assets\fonts\noto serif tamil\NotoSerifTamil-Medium.ttf
+          weight: 500
+        - asset: assets\fonts\noto serif tamil\NotoSerifTamil-SemiBold.ttf
+          weight: 600
+        - asset: assets\fonts\noto serif tamil\NotoSerifTamil-Bold.ttf
+          weight: 700
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
