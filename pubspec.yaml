@@ -34,6 +34,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  flutter_svg: ^2.5.1
 
 dev_dependencies:
   flutter_test:
@@ -51,11 +52,14 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/icons/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
-  uses-material-design: true
   fonts:
     - family: Sora
       fonts:
@@ -176,6 +180,7 @@ flutter:
           weight: 600
         - asset: assets\fonts\noto serif tamil\NotoSerifTamil-Bold.ttf
           weight: 700
+    
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
