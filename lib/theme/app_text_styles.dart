@@ -56,7 +56,7 @@ abstract final class AppTextStyles {
   static const sectionTitle = TextStyle(
     fontFamily: _sora,
     fontWeight: FontWeight.w600,
-    fontSize: 22,
+    fontSize: 19,
     color: AppColors.primaryText,
   );
 
