@@ -8,7 +8,7 @@ class AppColors {
   static const Color electricViolet = Color(0xFFA855F7);//Highlights, gradients, glowing borders, logo accents
 
   // NOVEL SECTION
-  static const Color novel = Color(0xFFE6A23C);//Novel navigation, selected categories, chapter progress, bookmarks
+  static const Color novels = Color(0xFFE6A23C);//Novel navigation, selected categories, chapter progress, bookmarks
   static const Color novelHighlight = Color(0xFFF5BD59);//Novel highlights, secondary accents, subtle gradients
 
   // COMICS & MANGA SECTION

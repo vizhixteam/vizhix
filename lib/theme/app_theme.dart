@@ -23,7 +23,7 @@ abstract final class AppTheme {
         onPrimaryContainer: AppColors.pureWhite,
 
         //Novel section
-        secondary: AppColors.novel,
+        secondary: AppColors.novels,
         onSecondary: AppColors.black,
 
         //Comics & Manga section

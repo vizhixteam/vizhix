@@ -49,14 +49,14 @@ abstract final class AppTextStyles {
   static const screenTitle = TextStyle(
     fontFamily: _sora,
     fontWeight: FontWeight.w700,
-    fontSize: 26,
+    fontSize: 25,
     color: AppColors.primaryText,
   );
 
   static const sectionTitle = TextStyle(
     fontFamily: _sora,
     fontWeight: FontWeight.w600,
-    fontSize: 19,
+    fontSize: 20,
     color: AppColors.primaryText,
   );
 
