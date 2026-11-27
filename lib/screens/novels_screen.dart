@@ -16,38 +16,20 @@ class NovelsScreen extends StatelessWidget {
       body: ListView(
         children: [
           // Continue reading
-          const Padding(
-            padding: EdgeInsets.all(16),
-            child: Text(
-              'Continue Reading',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-          ),
+          
           SizedBox(
-            height: 201,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: 2,
-              itemBuilder: (context, index) => Padding(
-                padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(12),
-                  child: Container(
-                    width: 350,
-                    color: AppColors.surface, //Placeholder color for the item
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 36,
+            height: 44,
             child: ListView(
-              scrollDirection: Axis.horizontal,
+              scrollDirection: Axis.horizontal, 
+              padding: const EdgeInsets.only(top: 8),
               children: [
                 _categoryButton('All', true),
-                _categoryButton('Novels', false),
-                _categoryButton('Comics', false),
+                _categoryButton('Fantasy', false),
+                _categoryButton('Romance', false),
+                _categoryButton('Action', false),
+                _categoryButton('Sci-Fi', false),
+                _categoryButton('Thriller', false),
+                _categoryButton('Horror', false),
               ],
             ),
           ),
