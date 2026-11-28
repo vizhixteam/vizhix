@@ -3,9 +3,34 @@ import 'package:flutter/material.dart';
 import '../theme/app_text_styles.dart';
 import '../theme/app_colors.dart';
 
-class ComicsScreen extends StatelessWidget {
+class ComicsScreen extends StatefulWidget {
   const ComicsScreen({super.key});
 
+  @override
+  State<ComicsScreen> createState() => _ComicsScreenState();
+}
+
+class _ComicsScreenState extends State<ComicsScreen> {
+  String _selectedBookType = 'All';
+  String _selectedCategory = 'All';
+  final List<String> _bookTypes = [
+    'All',
+    'Manga',
+    'Manhwa',
+    'Comics',
+    'Webtoons',
+  ];
+  final List<String> _categories = [
+    'All',
+    'Action',
+    'Fantasy',
+    'Romance',
+    'Comedy',
+    'Slice of Life',
+    'Sci-Fi',
+    'Horror',
+    'Thriller',
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,16 +41,14 @@ class ComicsScreen extends StatelessWidget {
         children: [
           SizedBox(
             height: 44,
-            child: ListView(
+            child: ListView.builder(
               scrollDirection: Axis.horizontal,
               padding: const EdgeInsets.only(left: 16, top: 8, right: 8),
-              children: [
-                _booktypeButton('All', true),
-                _booktypeButton('Manga', false),
-                _booktypeButton('Manhwa', false),
-                _booktypeButton('Comics', false),
-                _booktypeButton('Webtoons', false),
-              ],
+              itemCount: _bookTypes.length,
+              itemBuilder: (context, index) {
+                final type = _bookTypes[index];
+                return _bookButton(type, _selectedBookType == type);
+              },
             ),
           ),
 
@@ -131,20 +154,14 @@ class ComicsScreen extends StatelessWidget {
 
           SizedBox(
             height: 52,
-            child: ListView(
+            child: ListView.builder(
               scrollDirection: Axis.horizontal,
               padding: const EdgeInsets.only(left: 16, bottom: 16, right: 8),
-              children: [
-                _categoryButton('All', true),
-                _categoryButton('Action', false),
-                _categoryButton('Fantasy', false),
-                _categoryButton('Romance', false),
-                _categoryButton('Comedy', false),
-                _categoryButton('Slice of Life', false),
-                _categoryButton('Sci-Fi', false),
-                _categoryButton('Horror', false),
-                _categoryButton('Thriller', false),
-              ],
+              itemCount: _categories.length,
+              itemBuilder: (context, index) {
+                final category = _categories[index];
+                return _categoryButton(category, _selectedCategory == category);
+              },
             ),
           ),
           SizedBox(
@@ -309,27 +326,29 @@ class ComicsScreen extends StatelessWidget {
     );
   }
 
-  Widget _booktypeButton(String title, bool selected) {
-    return Container(
-      height: 36,
-      margin: const EdgeInsets.only(right: 8),
-      padding: const EdgeInsets.symmetric(horizontal: 14),
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        color: selected ? AppColors.pureWhite : AppColors.elevatedSurface,
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Text(
-        title,
-        style: AppTextStyles.bodyText.copyWith(
-          fontSize: 13,
-          color: selected ? AppColors.background : AppColors.primaryText,
-        ),
-      ),
+   Widget _bookButton(String type, bool isSelected) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          _selectedBookType = type;
+        });
+      },
+      child: _buildChipContainer(type, isSelected),
     );
   }
 
-  Widget _categoryButton(String title, bool selected) {
+  Widget _categoryButton(String category, bool isSelected) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          _selectedCategory = category;
+        });
+      },
+      child: _buildChipContainer(category, isSelected),
+    );
+  }
+
+  Widget _buildChipContainer(String title, bool selected) {
     return Container(
       height: 36,
       margin: const EdgeInsets.only(right: 8),

@@ -3,8 +3,29 @@ import 'package:flutter/material.dart';
 import '../theme/app_text_styles.dart';
 import '../theme/app_colors.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  String _selectedBookType = 'All';
+  String _selectedCategory = 'All';
+
+  final List<String> _bookTypes = ['All', 'Novels', 'Comics'];
+
+  final List<String> _categories = [
+    'All',
+    'Fantasy',
+    'Romance',
+    'Action',
+    'Comedy',
+    'Sci-Fi',
+    'Thriller',
+    'Horror',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +60,7 @@ class HomeScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                   child: Container(
                     width: 350,
-                    color: AppColors.surface, //Placeholder color for the item
+                    color: AppColors.surface, // Placeholder color for the item
                   ),
                 ),
               ),
@@ -47,14 +68,14 @@ class HomeScreen extends StatelessWidget {
           ),
           SizedBox(
             height: 36,
-            child: ListView(
+            child: ListView.builder(
               scrollDirection: Axis.horizontal,
               padding: const EdgeInsets.only(left: 16, right: 8),
-              children: [
-                _booksButton('All', true),
-                _booksButton('Novels', false),
-                _booksButton('Comics', false),
-              ],
+              itemCount: _bookTypes.length,
+              itemBuilder: (context, index) {
+                final type = _bookTypes[index];
+                return _booksButton(type, _selectedBookType == type);
+              },
             ),
           ),
 
@@ -138,8 +159,8 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 16, width: 32),
-          SizedBox(
+          const SizedBox(height: 16, width: 32),
+          const SizedBox(
             height: 90, // Standard small banner height
             width: double.infinity,
             child: Center(
@@ -159,19 +180,14 @@ class HomeScreen extends StatelessWidget {
 
           SizedBox(
             height: 52,
-            child: ListView(
+            child: ListView.builder(
               scrollDirection: Axis.horizontal,
               padding: const EdgeInsets.only(left: 16, bottom: 16, right: 8),
-              children: [
-                _categoryButton('All', true),
-                _categoryButton('Fantasy', false),
-                _categoryButton('Romance', false),
-                _categoryButton('Action', false),
-                _categoryButton('Comedy', false),
-                _categoryButton('Sci-Fi', false),
-                _categoryButton('Thriller', false),
-                _categoryButton('Horror', false),
-              ],
+              itemCount: _categories.length,
+              itemBuilder: (context, index) {
+                final category = _categories[index];
+                return _categoryButton(category, _selectedCategory == category);
+              },
             ),
           ),
           SizedBox(
@@ -228,8 +244,8 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 16, width: 32),
-          SizedBox(
+          const SizedBox(height: 16, width: 32),
+          const SizedBox(
             height: 90, // Standard small banner height
             width: double.infinity,
             child: Center(
@@ -320,8 +336,8 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 16, width: 32),
-          SizedBox(
+          const SizedBox(height: 16, width: 32),
+          const SizedBox(
             height: 90, // Standard small banner height
             width: double.infinity,
             child: Center(
@@ -337,25 +353,28 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget _categoryButton(String title, bool selected) {
-    return Container(
-      height: 36,
-      margin: const EdgeInsets.only(right: 8),
-      padding: const EdgeInsets.symmetric(horizontal: 14),
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        color: selected ? AppColors.pureWhite : AppColors.elevatedSurface,
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Text(
-        title,
-        style: AppTextStyles.bodyText.copyWith(
-          fontSize: 13,
-          color: selected ? AppColors.background : AppColors.primaryText,
-        ),
-      ),
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          _selectedCategory = title;
+        });
+      },
+      child: _buildChipContainer(title, selected),
     );
   }
-   Widget _booksButton(String title, bool selected) {
+
+  Widget _booksButton(String title, bool selected) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          _selectedBookType = title;
+        });
+      },
+      child: _buildChipContainer(title, selected),
+    );
+  }
+
+  Widget _buildChipContainer(String title, bool selected) {
     return Container(
       height: 36,
       margin: const EdgeInsets.only(right: 8),
