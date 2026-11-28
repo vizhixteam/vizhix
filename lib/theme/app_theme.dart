@@ -9,7 +9,9 @@ abstract final class AppTheme {
       //Main application background
       scaffoldBackgroundColor: AppColors.background,
       appBarTheme: const AppBarTheme(backgroundColor: AppColors.background),
-      navigationBarTheme: const NavigationBarThemeData(backgroundColor: AppColors.surface),
+      navigationBarTheme: const NavigationBarThemeData(
+        backgroundColor: AppColors.surface,
+      ),
       dividerColor: AppColors.border,
 
       //Global color system

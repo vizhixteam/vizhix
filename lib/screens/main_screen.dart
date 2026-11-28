@@ -104,6 +104,7 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 }
+
 // Add this helper inside _MainScreenState
 Color _getActiveColor(int index) {
   switch (index) {
@@ -117,4 +118,3 @@ Color _getActiveColor(int index) {
       return AppColors.primary; // Home & Profile color
   }
 }
-
